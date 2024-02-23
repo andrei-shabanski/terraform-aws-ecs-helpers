@@ -8,7 +8,7 @@ For example, if you manage your ECS cluster with Terraform, but deployment is ha
 
 ```hcl
 module "current_website_docker_image" {
-  source               = "../funcs/get_current_docker_image"
+  source               = "andrei-shabanski/ecs-helpers/aws"
   cluster_arn          = aws_ecs_cluster.foo.arn
   service_name         = "service"
   container_name       = "web"
