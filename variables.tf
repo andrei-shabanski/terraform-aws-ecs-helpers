@@ -22,3 +22,9 @@ variable "default_docker_image" {
   type        = string
   description = "The default docker image."
 }
+
+variable "return_default_docker_image" {
+  type        = bool
+  description = "Should return a default docker image."
+  default     = false
+}

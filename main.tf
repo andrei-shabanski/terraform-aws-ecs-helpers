@@ -9,5 +9,5 @@ data "aws_ecs_container_definition" "service" {
 }
 
 locals {
-  docker_image = length(data.aws_ecs_container_definition.service.image) > 0 ? data.aws_ecs_container_definition.service.image : var.default_docker_image
+  docker_image = !var.return_default_docker_image && length(data.aws_ecs_container_definition.service.image) > 0 ? data.aws_ecs_container_definition.service.image : var.default_docker_image
 }
